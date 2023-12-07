@@ -5,7 +5,7 @@ Module with type-annotated function zoom_array.
 from typing import List, Tuple
 
 
-def zoom_array(lst: Tuple, factor: int = 2) -> Tuple:
+def zoom_array(lst: Tuple, factor: int = 2) -> List:
     '''Creates multiple copies of items in a tuple.
     '''
     zoomed_in: List = [
