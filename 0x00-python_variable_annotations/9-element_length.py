@@ -2,7 +2,7 @@
 """
 Module with a type-annotated function to compute the length of elements in an iterable.
 """
-from typing import Iterable, Sequence, List, Tuple
+from typing import Iterable, List, Sequence, Tuple
 
 
 def element_length(lst: Iterable[Sequence]) -> List[Tuple[Sequence, int]]:
