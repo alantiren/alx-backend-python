@@ -9,4 +9,4 @@ def to_kv(k: str, v: Union[int, float]) -> Tuple[str, float]:
     """
     Function to convert a string and int/float to a tuple.
     """
-    return k, v ** 2
+    return (k, float(v**2))
