@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Module with a type-annotated function to sum a list of mixed integers and floats.
+Module with a type-annotated function to sum a list of mixed integers
+and floats.
 """
 from typing import List, Union
 

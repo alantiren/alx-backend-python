@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Module with a type-annotated function to compute the length of elements in an iterable.
+Module with a type-annotated function to compute the length of elements
+in an iterable.
 """
 from typing import Iterable, List, Sequence, Tuple
 
