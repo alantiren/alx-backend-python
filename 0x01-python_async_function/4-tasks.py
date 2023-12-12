@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Module with a function to execute multiple coroutines concurrently using asyncio tasks.
+Module with a function to execute multiple coroutines concurrently
+using asyncio tasks.
 """
-
 import asyncio
 from typing import List
 
