@@ -20,12 +20,3 @@ def task_wait_random(max_delay: int) -> asyncio.Task:
         asyncio.Task: Task for wait_random.
     """
     return asyncio.create_task(wait_random(max_delay))
-
-# Testing the task_wait_random function
-if __name__ == "__main__":
-    async def test(max_delay: int):
-        task = task_wait_random(max_delay)
-        await task
-        print(task.__class__)
-
-    asyncio.run(test(5))
