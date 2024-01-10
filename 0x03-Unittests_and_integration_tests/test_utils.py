@@ -2,11 +2,11 @@
 """
 Unit tests for utils module.
 """
-
 import unittest
 from parameterized import parameterized
 from unittest.mock import patch, MagicMock
 from utils import access_nested_map, get_json, memoize
+
 
 class TestAccessNestedMap(unittest.TestCase):
     """
@@ -18,23 +18,31 @@ class TestAccessNestedMap(unittest.TestCase):
         ({"a": {"b": 2}}, ["a"], {"b": 2}),
         ({"a": {"b": 2}}, ["a", "b"], 2),
     ])
-    def test_access_nested_map(self, nested_map, path, expected_result):
+    def test_access_nested_map(
+            self,
+            nested_map: dict,
+            path: list,
+            expected: dict,
+            ) -> None:
         """
         Test access_nested_map with various inputs.
         """
-        result = access_nested_map(nested_map, path)
-        self.assertEqual(result, expected_result)
+        self.assertEqual(access_nested_map(nested_map, path), expected)    
 
     @parameterized.expand([
         ({}, ["a"], KeyError),
         ({"a": 1}, ["a", "b"], KeyError),
     ])
-    def test_access_nested_map_exception(self, nested_map, path, expected_exception):
-        """
-        Test access_nested_map with inputs expected to raise exceptions.
-        """
-        with self.assertRaises(expected_exception):
+    def test_access_nested_map_exception(
+            self,
+            nested_map: Dict,
+            path: Tuple[str],
+            exception: Exception,
+            ) -> None:
+        """Test access_nested_map with inputs expected to raise exceptions."""
+        with self.assertRaises(exception):
             access_nested_map(nested_map, path)
+
 
 class TestGetJson(unittest.TestCase):
     """
@@ -58,6 +66,8 @@ class TestGetJson(unittest.TestCase):
         mock_requests_get.assert_called_once_with(test_url)
         self.assertEqual(result, test_payload)
 
+
+
 class TestMemoize(unittest.TestCase):
     """
     Test cases for memoize decorator.
@@ -79,4 +89,4 @@ class TestMemoize(unittest.TestCase):
             """
             Sample property using memoize decorator.
             """
-            return s
+            return self.a_method()
